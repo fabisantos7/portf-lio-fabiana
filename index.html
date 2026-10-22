@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fabiana Santos · Portfólio</title>
+  <meta name="description" content="Portfólio de Fabiana Santos — dev em formação navegando entre código e design.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2304081C'/%3E%3Ccircle cx='12' cy='12' r='6' fill='none' stroke='%2339D6FF' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%237CF5D4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav-fixa" aria-label="Principal">
+  <a class="logo" href="index.html">FS</a>
+  <button class="nav-toggle" aria-expanded="false" aria-label="Abrir ou fechar o menu"><span></span><span></span><span></span></button>
+  <ul class="menu">
+    <li><a href="index.html" class="ativo">Início</a></li>
+    <li><a href="jornada.html">Jornada</a></li>
+    <li><a href="saberes.html">Saberes</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="certificados.html">Certificados</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="kicker sobe" style="animation-delay:.1s">Olá, mundo — eu sou</p>
+        <h1 class="sobe" style="animation-delay:.2s">Fabiana<br><span class="grad">Santos</span></h1>
+        <p class="lede sobe" style="animation-delay:.35s">Dev em formação, navegando entre código e design — uma maré de cada vez, sempre rumo a águas mais profundas.</p>
+        <div class="hero-acoes sobe" style="animation-delay:.5s">
+          <a class="btn btn-solido" href="projetos.html">Ver projetos</a>
+          <a class="btn btn-linha" href="contato.html">Contato</a>
+        </div>
+      </div>
+      <figure class="foto-geo sobe" style="animation-delay:.3s;margin:0">
+        <label class="photo foto-frame" style="cursor:default" aria-label="Foto da Fabiana Santos">
+          <input type="file" accept="image/*">
+          <img class="foto-inner" src="fotofabiana.jpeg" alt="Foto de Fabiana Santos" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:inherit;display:block">
+        </label>
+        <figcaption>23.5505° S · 46.6333° W — Brasil</figcaption>
+      </figure>
+    </div>
+    <a class="cue" href="#rotas" aria-label="Descer">⌄</a>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>HTML <b>◆</b> CSS <b>◆</b> JavaScript <b>◆</b> Bootstrap <b>◆</b> Figma <b>◆</b> Canva <b>◆</b> GitHub <b>◆</b> Scratch <b>◆</b></span>
+      <span>HTML <b>◆</b> CSS <b>◆</b> JavaScript <b>◆</b> Bootstrap <b>◆</b> Figma <b>◆</b> Canva <b>◆</b> GitHub <b>◆</b> Scratch <b>◆</b></span>
+    </div>
+  </div>
+
+  <section class="rotas wrap" id="rotas">
+    <p class="kicker">Mapa do site</p>
+    <h2>Navegue pelas <span class="grad">marés</span></h2>
+    <div class="rotas-lista" data-stagger>
+      <a class="rota" href="jornada.html">
+        <span class="num">01</span>
+        <span><h3>Minha jornada</h3><p>Da primeira linha de código até aqui — marco por marco.</p></span>
+        <span class="seta">→</span>
+      </a>
+      <a class="rota" href="saberes.html">
+        <span class="num">02</span>
+        <span><h3>Saberes</h3><p>Meus conhecimentos e habilidades em constante evolução.</p></span>
+        <span class="seta">→</span>
+      </a>
+      <a class="rota" href="projetos.html">
+        <span class="num">03</span>
+        <span><h3>Projetos</h3><p>Expedições registradas: o que construí e o que aprendi.</p></span>
+        <span class="seta">→</span>
+      </a>
+      <a class="rota" href="certificados.html">
+        <span class="num">04</span>
+        <span><h3>Certificados</h3><p>Minhas conquistas, certificados de cursos.</p></span>
+        <span class="seta">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta-band reveal">
+      <h2>Gostou?</h2>
+      <p>Aberta a estágios, colaborações e propostas de projetos — vamos conversar!</p>
+      <a class="btn btn-solido" href="contato.html">Falar comigo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <nav class="rodape-nav" aria-label="Rodapé">
+    <a href="index.html">Início</a><a href="jornada.html">Jornada</a><a href="saberes.html">Saberes</a><a href="projetos.html">Projetos</a><a href="certificados.html">Certificados</a><a href="contato.html">Contato</a>
+  </nav>
+  <p class="creditos">© <span data-ano>2026</span> · Fabiana Santos — <b>feita onda por onda</b></p>
+  <hr class="fio">
+</footer>
+
+<div class="splash" aria-hidden="true">
+  <div class="splash-caixa">
+    <div class="splash-ring">FS</div>
+    <p class="splash-nome">Fabiana Santos</p>
+    <p class="splash-sub">// inicializando portfólio</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  /* Foto fixa no código: desliga o seletor de arquivo "clique para escolher" */
+  document.querySelectorAll('.foto-frame input[type="file"]').forEach(function (inp) { inp.disabled = true; });
+</script>
+</body>
+</html>

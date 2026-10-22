@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contato · Fabiana Santos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2304081C'/%3E%3Ccircle cx='12' cy='12' r='6' fill='none' stroke='%2339D6FF' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%237CF5D4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav-fixa" aria-label="Principal">
+  <a class="logo" href="index.html">FS</a>
+  <button class="nav-toggle" aria-expanded="false" aria-label="Abrir ou fechar o menu"><span></span><span></span><span></span></button>
+  <ul class="menu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="jornada.html">Jornada</a></li>
+    <li><a href="saberes.html">Saberes</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="certificados.html">Certificados</a></li>
+    <li><a href="contato.html" class="ativo">Contato</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="cab">
+    <span class="num-fantasma" aria-hidden="true">05</span>
+    <p class="kicker">Contato · vamos conversar</p>
+    <h1>Fale <span class="grad">comigo</span></h1>
+    <p class="sub">Aberta a estágios, colaborações e novas correntes de ideias. Respondo em todas as frequências abaixo.</p>
+    <svg class="ondas" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 30 C240 60 480 0 720 30 C960 60 1200 0 1440 30" fill="none" stroke="#39D6FF" stroke-width="1.5" opacity=".5"/>
+      <path d="M0 42 C240 72 480 12 720 42 C960 72 1200 12 1440 42" fill="none" stroke="#7CF5D4" stroke-width="1.5" opacity=".3"/>
+    </svg>
+  </section>
+
+  <section class="wrap">
+    <div class="contato-grid">
+      <div class="reveal">
+        <h2>Canais <span class="grad">diretos</span></h2>
+        <p class="txt">Prefere um canal rápido? Escolha por onde quer me enviar sua mensagem e eu respondo o mais breve possível. Se quiser, também pode preencher o formulário abaixo.</p>
+        <div class="chips" data-stagger>
+          <a class="chip" href="https://github.com/fabisantos7"><span>GitHub</span><span class="seta">→</span></a>
+          <a class="chip" href="https://www.linkedin.com/in/fabiana-santos-aguiar-silva-4177b73bb/?isSelfProfile=true"><span>LinkedIn</span><span class="seta">→</span></a>
+          <a class="chip" href="mailto:fabianasantosaguiarsilva3107@gmail.com"><span>fabianasantosaguiarsilva3107@gmail.com</span><span class="seta">→</span></a>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="form-topo" aria-hidden="true"><i></i><i></i><i></i><b>console de contato</b></div>
+        <form id="form-contato">
+          <div class="campo">
+            <label for="c-nome">Nome</label>
+            <input id="c-nome" name="nome" type="text" required placeholder="Como posso te chamar?">
+          </div>
+          <div class="campo">
+            <label for="c-email">Seu e-mail</label>
+            <input id="c-email" name="email" type="email" required placeholder="voce@exemplo.com">
+          </div>
+          <div class="campo">
+            <label for="c-msg">Mensagem</label>
+            <textarea id="c-msg" name="mensagem" required placeholder="Escreva sua mensagem..."></textarea>
+          </div>
+          <button class="btn btn-solido" type="submit">Enviar mensagem</button>
+          <p class="form-nota">Grata por entrar em contato! 💙</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <nav class="rodape-nav" aria-label="Rodapé">
+    <a href="index.html">Início</a><a href="jornada.html">Jornada</a><a href="saberes.html">Saberes</a><a href="projetos.html">Projetos</a><a href="certificados.html">Certificados</a><a href="contato.html">Contato</a>
+  </nav>
+  <p class="creditos">© <span data-ano>2025</span> · Fabiana Santos — <b>feita onda por onda</b></p>
+  <hr class="fio">
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
