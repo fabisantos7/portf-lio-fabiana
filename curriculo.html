@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Currículo · Fabiana Santos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2304081C'/%3E%3Ccircle cx='12' cy='12' r='6' fill='none' stroke='%2339D6FF' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%237CF5D4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Estilos exclusivos da página Currículo (autocontidos — não mexem em nada) ===== */
+    body { background:#04081C; color:#E8F4FF; font-family:'Outfit',sans-serif; }
+
+    .cv-perfil{ display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+      background:rgba(57,214,255,.06); border:1px solid rgba(57,214,255,.22);
+      border-radius:20px; padding:26px 30px; margin-bottom:18px; }
+    .cv-foto{ width:118px; height:118px; border-radius:50%; overflow:hidden; flex:0 0 auto;
+      border:3px solid #39D6FF; box-shadow:0 0 0 5px rgba(57,214,255,.15); }
+    .cv-foto img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; }
+    .cv-perfil h2{ font-family:'Syne',sans-serif; font-size:1.9rem; margin:0 0 2px; }
+    .cv-alvo{ margin:0; color:#7CF5D4; font-weight:500; }
+    .cv-loc{ margin:2px 0 0; color:#9fb3c8; font-size:.95rem; }
+    .cv-perfil .chips{ margin:10px 0 0; }
+
+    .cv-acoes{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:0 0 34px; }
+    .cv-dica{ color:#9fb3c8; font-size:.9rem; }
+    [contenteditable="true"]{ outline:none; border-bottom:1px dashed rgba(57,214,255,.45); cursor:text; }
+    [contenteditable="true"]:hover{ background:rgba(57,214,255,.07); }
+    [contenteditable="true"]:focus{ background:rgba(57,214,255,.1); border-bottom-color:#7CF5D4; }
+
+    .cv-grid{ display:grid; grid-template-columns:1.6fr 1fr; gap:26px; align-items:start; }
+    .cv-bloco{ background:rgba(57,214,255,.05); border:1px solid rgba(57,214,255,.16);
+      border-radius:18px; padding:22px 24px; margin-bottom:22px; }
+    .cv-bloco h3{ font-family:'Syne',sans-serif; font-size:1.15rem; letter-spacing:.02em;
+      color:#39D6FF; margin:0 0 14px; padding-bottom:10px;
+      border-bottom:1px solid rgba(57,214,255,.2); }
+    .cv-bloco h3 small{ font-family:'Space Mono',monospace; font-size:.75rem; color:#9fb3c8; font-weight:400; margin-left:8px; }
+    .cv-bloco p{ margin:0 0 8px; line-height:1.6; color:#d9ecff; }
+
+    .cv-item{ padding:10px 0; border-bottom:1px dashed rgba(57,214,255,.14); }
+    .cv-item:last-child{ border-bottom:none; }
+    .cv-item b{ color:#fff; font-weight:600; }
+    .cv-meta{ color:#9fb3c8; font-size:.9rem; margin:2px 0 0; }
+    .cv-meta a{ color:#39D6FF; text-decoration:none; }
+    .cv-meta a:hover{ text-decoration:underline; }
+
+    .cv-cert{ display:flex; justify-content:space-between; align-items:baseline; gap:14px;
+      padding:9px 0; border-bottom:1px dashed rgba(57,214,255,.14); }
+    .cv-cert:last-child{ border-bottom:none; }
+    .cv-cert span:first-child{ color:#d9ecff; }
+    .cv-horas{ font-family:'Space Mono',monospace; font-size:.78rem; color:#7CF5D4; white-space:nowrap; }
+    .cv-total{ margin-top:12px; font-family:'Space Mono',monospace; font-size:.8rem; color:#7CF5D4; }
+
+    .cv-comp{ margin-bottom:12px; }
+    .cv-comp small{ display:flex; justify-content:space-between; color:#d9ecff; font-size:.92rem; margin-bottom:5px; }
+    .cv-comp small em{ font-style:normal; font-family:'Space Mono',monospace; font-size:.75rem; color:#9fb3c8; }
+    .cv-bloco .barra{ margin-bottom:0; }
+
+    .cv-lingua{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed rgba(57,214,255,.14); }
+    .cv-lingua:last-child{ border-bottom:none; }
+    .cv-nivel{ font-family:'Space Mono',monospace; font-size:.78rem; color:#7CF5D4; }
+
+    /* ===== Impressão / Salvar como PDF ===== */
+    @media print{
+      body{ background:#fff !important; color:#111 !important; }
+      .nav-fixa,.rodape,.cv-acoes,.ondas,.num-fantasma,.cue,.splash{ display:none !important; }
+      .cv-perfil,.cv-bloco{ background:#fff !important; border-color:#cfd8e3 !important; box-shadow:none !important; }
+      .cv-perfil h2,.cv-bloco h3,.cv-alvo,.cv-meta a,.cv-titulo-grad{ color:#111 !important; -webkit-text-fill-color:#111 !important; }
+      .cv-meta,.cv-dica,.cv-loc,.cv-horas,.cv-nivel,.cv-total{ color:#444 !important; }
+      .cv-cert,.cv-item,.cv-lingua{ border-color:#ccc !important; }
+      [contenteditable="true"]{ border-bottom:none !important; }
+      .cv-grid{ grid-template-columns:1fr 1fr; gap:18px; }
+      main{ padding-top:0 !important; }
+      .cab{ padding:0 0 14px !important; }
+      .cv-bloco{ break-inside:avoid; }
+    }
+    @media (max-width:820px){
+      .cv-grid{ grid-template-columns:1fr; }
+      .cv-perfil{ text-align:center; justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav-fixa" aria-label="Principal">
+  <a class="logo" href="index.html">FS</a>
+  <button class="nav-toggle" aria-expanded="false" aria-label="Abrir ou fechar o menu"><span></span><span></span><span></span></button>
+  <ul class="menu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="jornada.html">Jornada</a></li>
+    <li><a href="saberes.html">Saberes</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="certificados.html">Certificados</a></li>
+    <li><a href="curriculo.html" class="ativo">Currículo</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="cab">
+    <span class="num-fantasma" aria-hidden="true">CV</span>
+    <p class="kicker">Currículo · resumo profissional</p>
+    <h1>Meu <span class="grad">currículo</span></h1>
+    <p class="sub">O portfólio conta histórias; o currículo vai direto ao ponto — baixa o PDF completo aqui embaixo.</p>
+    <svg class="ondas" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 30 C240 60 480 0 720 30 C960 60 1200 0 1440 30" fill="none" stroke="#39D6FF" stroke-width="1.5" opacity=".5"/>
+      <path d="M0 42 C240 72 480 12 720 42 C960 72 1200 12 1440 42" fill="none" stroke="#7CF5D4" stroke-width="1.5" opacity=".3"/>
+    </svg>
+  </section>
+
+  <section class="wrap">
+    <div class="cv-perfil reveal">
+      <div class="cv-foto"><img src="fotofabiana.jpeg" alt="Foto de Fabiana Santos"></div>
+      <div>
+        <h2>Fabiana Santos</h2>
+        <p class="cv-alvo">Estudante de Desenvolvimento de Sistemas · em busca de estágio ou aprendiz em TI</p>
+        <p class="cv-loc">São Paulo · Brasil</p>
+        <div class="chips">
+          <a class="chip" href="https://github.com/fabisantos7"><span>GitHub</span><span class="seta">→</span></a>
+          <a class="chip" href="https://www.linkedin.com/in/fabiana-santos-aguiar-silva-4177b73bb/?isSelfProfile=true"><span>LinkedIn</span><span class="seta">→</span></a>
+          <a class="chip" href="mailto:fabianasantosaguiarsilva3107@gmail.com"><span>E-mail</span><span class="seta">→</span></a>
+          <a class="chip" href="tel:+5511988017487"><span>(11) 98801-7487</span><span class="seta">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-acoes">
+      <a class="btn btn-solido" href="curriculo-fabiana.pdf" download="curriculo-fabiana.pdf">⭳ Baixar meu currículo (PDF)</a>
+      <span class="cv-dica"></span>
+    </div>
+
+  </section>
+</main>
+
+<footer class="rodape">
+  <nav class="rodape-nav" aria-label="Rodapé">
+    <a href="index.html">Início</a><a href="jornada.html">Jornada</a><a href="saberes.html">Saberes</a><a href="projetos.html">Projetos</a><a href="certificados.html">Certificados</a><a href="curriculo.html">Currículo</a><a href="contato.html">Contato</a>
+  </nav>
+  <p class="creditos">© <span data-ano>2026</span> · Fabiana Santos — <b>feito com carinho e dedicação</b></p>
+  <hr class="fio">
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
